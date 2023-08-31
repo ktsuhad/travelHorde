@@ -155,7 +155,7 @@ const Navbar = () => {
                 type="text"
                 value={destination}
                 onChange={(e) => handleDestinationInput(e.target.value)}
-                placeholder="Destination"
+                placeholder="New York"
                 required
                 className="px-1 py-1 outline-none w-72"
               />
@@ -184,6 +184,7 @@ const Navbar = () => {
                 type="date"
                 value={departureDate}
                 onChange={(e) => setDepartureDate(e.target.value)}
+                min={new Date().toISOString().split("T")[0]}
                 required
                 className="px-1 py-1 outline-none w-72"
               />
@@ -196,6 +197,7 @@ const Navbar = () => {
                 type="date"
                 value={returnDate}
                 onChange={(e) => setReturnDate(e.target.value)}
+                min={departureDate}
                 required
                 className="px-1 py-1 outline-none w-72"
               />
